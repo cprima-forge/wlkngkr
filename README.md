@@ -73,7 +73,7 @@ Useful scripts:
 1. Update `CHANGELOG.md` and bump `pyproject.toml`'s version.
 2. Commit the release (`git commit -am "chore: release v0.x.y"`).
 3. Tag it (`git tag v0.x.y && git push origin v0.x.y`).
-4. GitHub Actions (`.github/workflows/release.yml`) will run tests, build the distribution via `uv build`, and publish to PyPI using the `PYPI_API_TOKEN` secret.
+4. GitHub Actions (`.github/workflows/release.yml`) will run tests, build the distribution via `uv build`, and publish to PyPI using the `PYPI_API_TOKEN` secret or trusted publishing (OIDC) if configured.
 
 ## License
 
