@@ -13,4 +13,4 @@
 
 - `ProbeMetadata`: name, version, description.
 - `ProbeResult`: status, data payload, warnings, error, duration.
-- `EnvReport`: mapping of probe name → `ProbeResult` plus timing metadata.
+- `EnvReport`: mapping of probe name -> `ProbeResult` plus timing metadata.

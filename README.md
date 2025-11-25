@@ -1,17 +1,84 @@
-# wlkngkr
+<|start_of_focus|># wlkngkr
 
-Modular, extensible environment probing framework.
+`wlkngkr` is a modular, extensible environment probing framework. Each probe is a focused Python class, the runner orchestrates them, and the CLI produces structured `pydantic` reports that you can feed into logging, diagnostics, or compliance tooling.
 
-- Probes live in separate modules (system, user, etc.)
-- A central runner orchestrates execution
-- Results are structured Pydantic models
-- CLI powered by `uv` + `typer`
+## Features
 
-## Quick start (with uv)
+- Batteries-included probes for system and user context.
+- Central registry + runner that selects probes by name or tag.
+- Typed results (`EnvReport`, `ProbeResult`) built with `pydantic`.
+- Typer-powered CLI that doubles as a Python API (`ProbeRunner`).
+- Shipping via Apache 2.0 so it can live inside automation pipelines.
+
+## Installation
+
+Stable releases will be published to PyPI.
 
 ```bash
-# inside cloned cprima-forge/wlkngkr
-uv sync
+pip install wlkngkr
+# or, with uv (recommended for contributors)
+uv tool install wlkngkr
+```
+
+If you want to work from the repo:
+
+```bash
+git clone https://github.com/cprima-forge/wlkngkr.git
+cd wlkngkr
+uv sync --dev
+```
+
+## Usage
+
+List available probes and run everything (default JSON output):
+
+```bash
 uv run wlkngkr --list
 uv run wlkngkr --probe system --probe user
 ```
+
+Prefer human-friendly status lines? Use the built-in `text` formatter:
+
+```bash
+uv run wlkngkr --format text
+[system] status=success
+[user]   status=success
+```
+
+Python API usage is equally straightforward:
+
+```python
+from wlkngkr.runner import ProbeRunner
+from wlkngkr.config import RunnerConfig
+
+runner = ProbeRunner()
+report = runner.run(RunnerConfig(tags=["core"]))
+print(report.model_dump())
+```
+
+## Development
+
+```bash
+uv sync --all-extras --dev
+uv run pytest
+```
+
+Useful scripts:
+
+- `uv run wlkngkr run --probe system` – run a single probe
+- `uv run wlkngkr --list` – check registry state
+
+## Releasing
+
+1. Update `CHANGELOG.md` and bump `pyproject.toml`'s version.
+2. Commit the release (`git commit -am "chore: release v0.x.y"`).
+3. Tag it (`git tag v0.x.y && git push origin v0.x.y`).
+4. GitHub Actions (`.github/workflows/release.yml`) will run tests, build the distribution via `uv build`, and publish to PyPI using the `PYPI_API_TOKEN` secret.
+
+## License
+
+Apache License 2.0 – see [`LICENSE`](./LICENSE).
+
+## Maintainer
+
+Christian Prior-Mamulyan ([@cprima](https://github.com/cprima)) — cprior@gmail.com<|end_of_focus|>
