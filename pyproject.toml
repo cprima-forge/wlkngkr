@@ -3,14 +3,41 @@ name = "wlkngkr"
 version = "0.1.0"
 description = "Modular environment probe framework"
 readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.10"
 authors = [
-    { name = "cprima", email = "example@example.com" },
+    { name = "Christian Prior-Mamulyan", email = "cprior@gmail.com" },
+]
+keywords = [
+    "environment",
+    "probe",
+    "diagnostics",
+    "cli",
+    "pydantic",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Monitoring",
+    "Topic :: Utilities",
 ]
 dependencies = [
     "pydantic>=2.7",
     "typer>=0.12.3",
 ]
+
+[project.urls]
+Homepage = "https://github.com/cprima-forge/wlkngkr"
+Documentation = "https://github.com/cprima-forge/wlkngkr/tree/develop/docs"
+Source = "https://github.com/cprima-forge/wlkngkr"
+Issues = "https://github.com/cprima-forge/wlkngkr/issues"
+Changelog = "https://github.com/cprima-forge/wlkngkr/blob/develop/CHANGELOG.md"
 
 [project.scripts]
 wlkngkr = "wlkngkr.cli:main"
