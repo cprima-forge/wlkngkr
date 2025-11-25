@@ -59,7 +59,7 @@ class ProcessProbe(Probe):
                 with open("/proc/meminfo") as f:
                     meminfo = f.read()
                     data["mem"] = {}
-                    for line in meminfo.split("\n")[:10]:
+                    for line in meminfo.split("\n"):
                         if line:
                             parts = line.split(":")
                             if len(parts) == 2:

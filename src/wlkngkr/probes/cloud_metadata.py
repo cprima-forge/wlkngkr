@@ -42,7 +42,7 @@ class CloudMetadataProbe(Probe):
                     and "404" not in result.stdout
                 ):
                     data["aws_metadata"] = "accessible"
-                    data["aws_metadata_content"] = result.stdout[:500]
+                    data["aws_metadata_content"] = result.stdout
                 else:
                     data["aws_metadata"] = "not accessible"
             except Exception:
@@ -70,7 +70,7 @@ class CloudMetadataProbe(Probe):
                     and "404" not in result.stdout
                 ):
                     data["gcp_metadata"] = "accessible"
-                    data["gcp_metadata_content"] = result.stdout[:500]
+                    data["gcp_metadata_content"] = result.stdout
                 else:
                     data["gcp_metadata"] = "not accessible"
             except Exception:
@@ -98,7 +98,7 @@ class CloudMetadataProbe(Probe):
                     and "404" not in result.stdout
                 ):
                     data["azure_metadata"] = "accessible"
-                    data["azure_metadata_content"] = result.stdout[:500]
+                    data["azure_metadata_content"] = result.stdout
                 else:
                     data["azure_metadata"] = "not accessible"
             except Exception:

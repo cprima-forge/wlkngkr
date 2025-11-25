@@ -36,8 +36,8 @@ class PackagesProbe(Probe):
                 pkg: packages.get(pkg, "not installed") for pkg in key_packages
             }
 
-            # All packages (truncated)
-            data["all_packages"] = dict(sorted(packages.items())[:50])
+            # All packages
+            data["all_packages"] = dict(sorted(packages.items()))
 
             status = ProbeStatus.SUCCESS
             error = None

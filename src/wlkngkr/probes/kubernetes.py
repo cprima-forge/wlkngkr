@@ -84,7 +84,7 @@ class KubernetesProbe(Probe):
                     if os.path.isfile(path):
                         try:
                             with open(path) as f:
-                                data["downward_api"][path] = f.read()[:500]
+                                data["downward_api"][path] = f.read()
                         except Exception:
                             data["downward_api"][path] = "exists (unreadable)"
                     else:

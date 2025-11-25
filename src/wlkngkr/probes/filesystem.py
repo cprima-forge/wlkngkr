@@ -61,7 +61,7 @@ class FilesystemProbe(Probe):
             data["directory_contents"] = {}
             for d in dirs_to_list:
                 try:
-                    data["directory_contents"][d] = os.listdir(d)[:20]
+                    data["directory_contents"][d] = os.listdir(d)
                 except Exception as e:
                     data["directory_contents"][d] = str(e)
 
@@ -73,7 +73,7 @@ class FilesystemProbe(Probe):
             try:
                 with open("/proc/1/cgroup") as f:
                     cgroup_content = f.read()
-                    data["container_indicators"]["cgroup_content"] = cgroup_content[:500]
+                    data["container_indicators"]["cgroup_content"] = cgroup_content
             except Exception:
                 pass
 
