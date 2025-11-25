@@ -44,7 +44,7 @@ class ExecutionContextProbe(Probe):
 
             # Module loading context
             data["__name__"] = __name__
-            data["sys_path"] = sys.path[:10]  # First 10 entries
+            data["sys_path"] = sys.path
             data["sys_executable"] = sys.executable
 
             # Working directory vs script location

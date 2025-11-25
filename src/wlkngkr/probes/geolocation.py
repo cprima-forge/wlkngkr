@@ -78,7 +78,7 @@ class GeolocationProbe(Probe):
                     timeout=5,
                 )
                 if result.returncode == 0:
-                    data["timedatectl"] = result.stdout[:500]
+                    data["timedatectl"] = result.stdout
             except Exception:
                 pass
 

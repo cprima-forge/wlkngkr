@@ -39,7 +39,7 @@ class NetworkProbe(Probe):
                     timeout=5,
                 )
                 data["ip_addr"] = (
-                    result.stdout[:1000] if result.returncode == 0 else "failed"
+                    result.stdout if result.returncode == 0 else "failed"
                 )
             except Exception:
                 data["ip_addr"] = "ip command not available"

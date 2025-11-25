@@ -47,8 +47,7 @@ class EnvironmentProbe(Probe):
             for var in safe_vars:
                 val = os.environ.get(var)
                 if val:
-                    # Truncate long values
-                    data["env_vars"][var] = val[:200] if len(val) > 200 else val
+                    data["env_vars"][var] = val
 
             # Count total env vars
             data["total_env_vars"] = len(os.environ)
