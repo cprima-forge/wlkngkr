@@ -1,0 +1,3 @@
+# Normalise line endings on commit, so a file rewritten on Windows does not
+# report every line as changed and hide real edits inside the noise.
+* text=auto
