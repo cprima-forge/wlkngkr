@@ -1,6 +1,6 @@
 [project]
 name = "wlkngkr"
-version = "0.1.1"
+version = "0.1.2"
 description = "Modular environment probe framework"
 readme = "README.md"
 license = "Apache-2.0"
@@ -33,11 +33,11 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/cprima-forge/wlkngkr"
-Documentation = "https://github.com/cprima-forge/wlkngkr/tree/develop/docs"
-Source = "https://github.com/cprima-forge/wlkngkr"
-Issues = "https://github.com/cprima-forge/wlkngkr/issues"
-Changelog = "https://github.com/cprima-forge/wlkngkr/blob/develop/CHANGELOG.md"
+Homepage = "https://github.com/cprima-forge/cpmf-uiprc-diag"
+Documentation = "https://github.com/cprima-forge/cpmf-uiprc-diag/tree/develop/docs"
+Source = "https://github.com/cprima-forge/cpmf-uiprc-diag"
+Issues = "https://github.com/cprima-forge/cpmf-uiprc-diag/issues"
+Changelog = "https://github.com/cprima-forge/cpmf-uiprc-diag/blob/develop/CHANGELOG.md"
 
 [project.scripts]
 wlkngkr = "wlkngkr.cli:main"

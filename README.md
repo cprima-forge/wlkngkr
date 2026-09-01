@@ -23,8 +23,8 @@ uv tool install wlkngkr
 If you want to work from the repo:
 
 ```bash
-git clone https://github.com/cprima-forge/wlkngkr.git
-cd wlkngkr
+git clone https://github.com/cprima-forge/cpmf-uiprc-diag.git
+cd cpmf-uiprc-diag
 uv sync --dev
 ```
 
